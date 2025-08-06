@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 101, in show_cari
+    from gui.modules.cari import CariModule
+  File "C:\YEDEK\OK2_muhasebe\gui\modules\cari.py", line 3, in <module>
+    from core.database import get_session
+  File "C:\YEDEK\OK2_muhasebe\core\__init__.py", line 2, in <module>
+    from .database import init_db, get_session
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 2, in <module>
+    from sqlalchemy import create_engine
+ModuleNotFoundError: No module named 'sqlalchemy'
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 101, in show_cari
+    from gui.modules.cari import CariModule
+  File "C:\YEDEK\OK2_muhasebe\gui\modules\cari.py", line 3, in <module>
+    from core.database import get_session
+  File "C:\YEDEK\OK2_muhasebe\core\__init__.py", line 2, in <module>
+    from .database import init_db, get_session
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 2, in <module>
+    from sqlalchemy import create_engine
+ModuleNotFoundError: No module named 'sqlalchemy'
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 101, in show_cari
+    from gui.modules.cari import CariModule
+  File "C:\YEDEK\OK2_muhasebe\gui\modules\cari.py", line 3, in <module>
+    from core.database import get_session
+  File "C:\YEDEK\OK2_muhasebe\core\__init__.py", line 2, in <module>
+    from .database import init_db, get_session
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 2, in <module>
+    from sqlalchemy import create_engine
+ModuleNotFoundError: No module named 'sqlalchemy'

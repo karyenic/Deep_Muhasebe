@@ -1,0 +1,328 @@
+2025-07-25 01:58:38,175 - root - ERROR - Uygulama ba\u015flatma hatas\u0131
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 14, in main
+    from core.database import init_db, get_session
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 1, in <module>
+    from sqlalchemy import create_engine
+ModuleNotFoundError: No module named 'sqlalchemy'
+2025-07-25 02:12:34,013 - root - ERROR - Uygulama ba\u015flatma hatas\u0131
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 14, in main
+    from core.database import init_db, get_session
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 1, in <module>
+    from sqlalchemy import create_engine
+ModuleNotFoundError: No module named 'sqlalchemy'
+2025-07-25 02:36:15,586 - root - ERROR - Uygulama ba\u015flat\u0131l\u0131rken hata olu\u015ftu:
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.DatabaseError: file is not a database
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 111, in <module>
+    app = MainApp(root)
+          ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 27, in __init__
+    init_db()  # Veritaban\u0131n\u0131 ba\u015flat
+    ^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 9, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5924, in create_all
+    bind._run_ddl_visitor(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3248, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2455, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\visitors.py", line 664, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 961, in visit_metadata
+    [t for t in tables if self._can_create_table(t)]
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 961, in <listcomp>
+    [t for t in tables if self._can_create_table(t)]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 926, in _can_create_table
+    return not self.checkfirst or not self.dialect.has_table(
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in has_table
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\reflection.py", line 89, in cache
+    return fn(self, con, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\base.py", line 2296, in has_table
+    info = self._get_table_pragma(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\base.py", line 2934, in _get_table_pragma
+    cursor = connection.exec_driver_sql(statement)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1775, in exec_driver_sql
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (sqlite3.DatabaseError) file is not a database
+[SQL: PRAGMA main.table_info("firms")]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-25 02:41:50,643 - root - ERROR - Uygulama ba\u015flat\u0131l\u0131rken hata olu\u015ftu:
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.DatabaseError: file is not a database
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 111, in <module>
+    app = MainApp(root)
+          ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 27, in __init__
+    init_db()  # Veritaban\u0131n\u0131 ba\u015flat
+    ^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 9, in init_db
+    Base.metadata.create_all(bind=engine)
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 5924, in create_all
+    bind._run_ddl_visitor(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3248, in _run_ddl_visitor
+    conn._run_ddl_visitor(visitorcallable, element, **kwargs)
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2455, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\visitors.py", line 664, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 961, in visit_metadata
+    [t for t in tables if self._can_create_table(t)]
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 961, in <listcomp>
+    [t for t in tables if self._can_create_table(t)]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 926, in _can_create_table
+    return not self.checkfirst or not self.dialect.has_table(
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in has_table
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\reflection.py", line 89, in cache
+    return fn(self, con, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\base.py", line 2296, in has_table
+    info = self._get_table_pragma(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\dialects\sqlite\base.py", line 2934, in _get_table_pragma
+    cursor = connection.exec_driver_sql(statement)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1775, in exec_driver_sql
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (sqlite3.DatabaseError) file is not a database
+[SQL: PRAGMA main.table_info("firms")]
+(Background on this error at: https://sqlalche.me/e/20/4xp6)
+2025-07-27 01:57:47,181 - root - ERROR - Uygulama ba\u015flat\u0131l\u0131rken hata olu\u015ftu:
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 111, in <module>
+    app = MainApp(root)
+          ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 27, in __init__
+    init_db()  # Veritaban\u0131n\u0131 ba\u015flat
+    ^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 22, in init_db
+    print("Veritaban\u0131 tablolar\u0131 ba\u015far\u0131yla olu\u015fturuldu.")
+  File "C:\Program Files\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0131' in position 9: character maps to <undefined>
+2025-08-04 22:24:11,086 - root - ERROR - Uygulama ba\u015flat\u0131l\u0131rken hata olu\u015ftu:
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 115, in <module>
+    app = MainApp(root)
+          ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 27, in __init__
+    init_db()  # Veritaban\u0131n\u0131 ba\u015flat
+    ^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 22, in init_db
+    print("Veritaban\u0131 tablolar\u0131 ba\u015far\u0131yla olu\u015fturuldu.")
+  File "C:\Program Files\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0131' in position 9: character maps to <undefined>
+2025-08-04 23:29:28,388 - root - ERROR - Uygulama ba\u015flat\u0131l\u0131rken hata olu\u015ftu:
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users.password_hash
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 118, in <module>
+    app = MainApp(root)
+          ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 33, in __init__
+    self.check_firm_exists()
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 40, in check_firm_exists
+    admin_count = self.session.query(User).filter_by(role="admin").count()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 3146, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2835, in scalar
+    ret = self.one()
+          ^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2808, in one
+    return self._iter().one()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\YEDEK\OK2_muhasebe\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.password_hash
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.role AS users_role, users.email AS users_email, users.firm_id AS users_firm_id 
+FROM users 
+WHERE users.role = ?) AS anon_1]
+[parameters: ('admin',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-04 23:31:33,868 - root - ERROR - Uygulama ba\u015flat\u0131l\u0131rken hata olu\u015ftu:
+Traceback (most recent call last):
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: users.password_hash
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 118, in <module>
+    app = MainApp(root)
+          ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 33, in __init__
+    self.check_firm_exists()
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 40, in check_firm_exists
+    admin_count = self.session.query(User).filter_by(role="admin").count()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 3146, in count
+    self._legacy_from_self(col).enable_eagerloads(False).scalar()
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2835, in scalar
+    ret = self.one()
+          ^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2808, in one
+    return self._iter().one()  # type: ignore
+           ^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\query.py", line 2857, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\session.py", line 2251, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1637, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1982, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 2351, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\base.py", line 1963, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\karye\AppData\Roaming\Python\Python311\site-packages\sqlalchemy\engine\default.py", line 943, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: users.password_hash
+[SQL: SELECT count(*) AS count_1 
+FROM (SELECT users.id AS users_id, users.username AS users_username, users.password_hash AS users_password_hash, users.role AS users_role, users.email AS users_email, users.firm_id AS users_firm_id 
+FROM users 
+WHERE users.role = ?) AS anon_1]
+[parameters: ('admin',)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-08-04 23:53:04,732 - root - ERROR - Uygulama ba\u015flat\u0131l\u0131rken hata olu\u015ftu:
+Traceback (most recent call last):
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 118, in <module>
+    app = MainApp(root)
+          ^^^^^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\app.py", line 30, in __init__
+    init_db()  # Veritaban\u0131n\u0131 ba\u015flat
+    ^^^^^^^^^
+  File "C:\YEDEK\OK2_muhasebe\core\database.py", line 22, in init_db
+    print("Veritaban\u0131 tablolar\u0131 ba\u015far\u0131yla olu\u015fturuldu.")
+  File "C:\Program Files\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u0131' in position 9: character maps to <undefined>
+2025-08-05 03:39:51,923 - __main__ - INFO - Uygulama başlatılıyor
+2025-08-05 03:39:59,301 - __main__ - INFO - Uygulama normal şekilde kapandı
+2025-08-05 03:40:49,987 - __main__ - INFO - Uygulama başlatılıyor
+2025-08-05 03:40:55,331 - __main__ - INFO - Uygulama normal şekilde kapandı
+2025-08-05 03:42:17,092 - __main__ - INFO - Uygulama başlatılıyor
+2025-08-05 03:42:30,704 - __main__ - INFO - Uygulama normal şekilde kapandı
+2025-08-06 01:43:04,400 - INFO - Uygulama ba\u015far\u0131yla ba\u015flat\u0131ld\u0131
+2025-08-06 01:49:14,527 - INFO - Uygulama ba\u015far\u0131yla ba\u015flat\u0131ld\u0131
+2025-08-06 01:50:01,018 - INFO - Uygulama ba\u015far\u0131yla ba\u015flat\u0131ld\u0131
+2025-08-06 01:51:59,161 - INFO - Uygulama ba\u015far\u0131yla ba\u015flat\u0131ld\u0131
+2025-08-06 01:54:03,000 - INFO - Uygulama ba\u015far\u0131yla ba\u015flat\u0131ld\u0131
+2025-08-06 01:59:07,954 - INFO - Uygulama ba\u015far\u0131yla ba\u015flat\u0131ld\u0131

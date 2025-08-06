@@ -17,3 +17,4 @@ Python ile geliştirilen masaüstü muhasebe uygulaması
 
 ## Ekran Görüntüleri
 Ana ekran görüntüsü gelecek
+temel sistem kuruldu

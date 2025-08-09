@@ -1,8 +1,0 @@
-__pycache__/
-*.pyc
-*.log
-*.bak
-*.db
-veriler/
-yedekler/
-faturalar/

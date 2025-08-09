@@ -1,7 +1,7 @@
-﻿# C:\YEDEK\Deep_Muhasebe\Deep_Muhasebe-main\app.py
-import tkinter as tk
+﻿import tkinter as tk
 from tkinter import ttk
 import sqlite3
+import os
 
 class FirmaYonetimi(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
@@ -9,12 +9,22 @@ class FirmaYonetimi(tk.Frame):
         self.parent = parent
         self.status_var = tk.StringVar()
         self.status_var.set("Firma Yönetim Modülü")
-        self.create_widgets()
-        self.connect_db()
-        self.load_firmalar()
         
+        # Önce veritabanı bağlantısı
+        self.connect_db()
+        
+        # Sonra arayüz bileşenlerini oluştur
+        self.create_widgets()
+        
+        # En son firmaları yükle
+        self.load_firmalar()
+    
     def connect_db(self):
         """Veritabanı bağlantısını oluştur"""
+        # Veritabanı klasörünü oluştur
+        if not os.path.exists("veriler"):
+            os.makedirs("veriler")
+        
         self.conn = sqlite3.connect('veriler/muhasebe.db')
         self.c = self.conn.cursor()
         
@@ -26,7 +36,7 @@ class FirmaYonetimi(tk.Frame):
                             telefon TEXT,
                             adres TEXT)''')
         self.conn.commit()
-
+    
     def create_widgets(self):
         """Arayüz bileşenlerini oluştur"""
         # Form Alanları

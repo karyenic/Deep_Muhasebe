@@ -1,13 +1,14 @@
-﻿import tkinter as tk
-from tkinter import ttk, messagebox
-from core.database import SessionLocal, create_tables
-from core.models.kullanici import Kullanici, get_password_hash
-import sys
+﻿import sys
 import os
+import tkinter as tk
+from tkinter import ttk, messagebox
 
 # Proje ana dizinini Python'ın arama yoluna ekle
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ana_dizin)
+
+from core.database import SessionLocal, create_tables
+from core.models.kullanici import Kullanici, get_password_hash
 
 # Veritabanı tablolarını oluştur
 create_tables()

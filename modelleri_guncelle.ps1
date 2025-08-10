@@ -1,0 +1,1 @@
+Get-ChildItem -Path "C:\YEDEK\Deep_Muhasebe\Deep_Muhasebe-main" | Where-Object {$_.Name -eq 'modelleri_guncelle.ps1'}

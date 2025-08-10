@@ -14,7 +14,7 @@ from core.models.fatura import Fatura, FaturaKalem
 from core.models.cari_hesap import CariHesap
 
 # VeritabanÄ± tablolarÄ±nÄ± oluÅŸtur
-create_tables()
+create_all_tables()
 
 # Yerel ayarlarÄ± TÃ¼rkÃ§e'ye ayarla
 try:

@@ -13,8 +13,9 @@ class CariHesap(Base):
     vergi_no = Column(String)
     musteri = Column(Boolean, default=True) # True ise mÃ¼ÅŸteri, False ise tedarikÃ§i
 
-    # SipariÅŸler ile iliÅŸkiyi tanÄ±mla
+    # SipariÅŸler ve Faturalar ile iliÅŸkiyi tanÄ±mla
     siparisler = relationship("Siparis", back_populates="cari_hesap")
+    faturalar = relationship("Fatura", back_populates="cari_hesap") # Yeni eklenen satÄ±r
 
     def __repr__(self):
         return f"<CariHesap(cari_adi='{self.cari_adi}')>"

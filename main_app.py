@@ -1,4 +1,5 @@
 ﻿import tkinter as tk
+from core.database import create_all_tables
 from tkinter import ttk, messagebox
 import sys
 import os
@@ -9,7 +10,9 @@ from gui.fatura_irsaliye import FaturaIrsaliyeYonetimi
 from gui.kullanici_yonetimi import KullaniciYonetimi
 from gui.siparis_yonetimi import SiparisYonetimi
 
-class AnaMenu(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        create_all_tables()
     def __init__(self):
         super().__init__()
         self.title("Deep Muhasebe - Ana Menü")

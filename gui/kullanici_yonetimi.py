@@ -12,7 +12,7 @@ from core.models.kullanici import Kullanici
 from core.security import get_password_hash
 
 # Veritabanı tablolarını oluştur
-create_tables()
+create_all_tables()
 
 class KullaniciYonetimi(tk.Toplevel):
     def __init__(self, master=None):

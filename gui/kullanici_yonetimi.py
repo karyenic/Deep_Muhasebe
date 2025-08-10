@@ -74,7 +74,7 @@ class KullaniciYonetimi(tk.Toplevel):
 
         yeni_kullanici = Kullanici(
             kullanici_adi=kullanici_adi,
-            hashed_sifre=hashed_sifre,
+            sifre=hashed_sifre,
             is_admin=is_admin
         )
         

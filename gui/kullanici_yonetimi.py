@@ -9,6 +9,7 @@ sys.path.append(ana_dizin)
 
 from core.database import SessionLocal, create_tables
 from core.models.kullanici import Kullanici
+from core.security import get_password_hash
 
 # Veritabanı tablolarını oluştur
 create_tables()

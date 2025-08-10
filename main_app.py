@@ -1,7 +1,7 @@
 ﻿import tkinter as tk
 from tkinter import ttk, messagebox
 
-# GUI modüllerini içe aktar
+# GUI modüllerini doğrudan içe aktar
 from gui.cari_hesap import CariHesapYonetimi
 from gui.fatura_irsaliye import FaturaIrsaliyeYonetimi
 from gui.kullanici import KullaniciYonetimi

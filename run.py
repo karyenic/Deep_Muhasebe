@@ -1,10 +1,12 @@
 ﻿import sys
 import os
 
-# Proje ana dizinini Python'ın arama yoluna ekle
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Projenin ana dizinini Python'ın arama yoluna ekle
+ana_dizin = os.path.dirname(os.path.abspath(__file__))
+if ana_dizin not in sys.path:
+    sys.path.append(ana_dizin)
 
-# main_app.py dosyasını ana menü olarak çalıştır
+# main_app.py dosyasından ana menüyü içe aktar
 from main_app import AnaMenu
 
 if __name__ == "__main__":

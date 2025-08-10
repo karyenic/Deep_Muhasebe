@@ -11,7 +11,7 @@ from core.database import SessionLocal, create_all_tables
 from core.models.cari_hesap import CariHesap
 
 # Veritabanı tablolarını oluştur
-create_all_tables()()
+create_all_tables()
 
 class CariHesapYonetimi(tk.Toplevel):
     def __init__(self, master=None):

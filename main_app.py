@@ -1,15 +1,11 @@
 ﻿import tkinter as tk
 from tkinter import ttk, messagebox
-import sys
-import os
 
-# gui klasörünü Python'ın yoluna ekleyerek modülleri doğrudan içe aktar
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'gui')))
-
-from cari_hesap import CariHesapYonetimi
-from fatura_irsaliye import FaturaIrsaliyeYonetimi
-from kullanici import KullaniciYonetimi
-from siparis_yonetimi import SiparisYonetimi
+# GUI modüllerini içe aktar
+from gui.cari_hesap import CariHesapYonetimi
+from gui.fatura_irsaliye import FaturaIrsaliyeYonetimi
+from gui.kullanici import KullaniciYonetimi
+from gui.siparis_yonetimi import SiparisYonetimi
 
 class AnaMenu(tk.Tk):
     def __init__(self):

@@ -1,53 +1,48 @@
 ﻿import tkinter as tk
 from tkinter import ttk
 from tkcalendar import Calendar
+from datetime import datetime
 
-root = tk.Tk()
-root.title("Deep Muhasebe - Yeni Arayüz")
-root.geometry("1200x700")
+class DeepMuhasebeUI(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("Deep Muhasebe - Yeni Arayüz")
+        self.geometry("900x600")
 
-# Üst Menü Çubuğu
-menu_bar = tk.Menu(root)
-menu_items = {
-    "Stok": ["Stok Listesi", "Yeni Stok Ekle", "Stok Raporu"],
-    "Cari": ["Cari Kartlar", "Hareketler", "Raporlar"],
-    "Kasa": ["Kasa Girişi", "Kasa Çıkışı", "Kasa Raporu"],
-    "Fatura": ["Alış Faturası", "Satış Faturası", "Fatura Listesi"]
-}
-for menu_name, commands in menu_items.items():
-    m = tk.Menu(menu_bar, tearoff=0)
-    for cmd in commands:
-        m.add_command(label=cmd)
-    menu_bar.add_cascade(label=menu_name, menu=m)
-root.config(menu=menu_bar)
+        self.create_widgets()
 
-# Sol Panel (Kısayollar)
-sidebar = tk.Frame(root, width=200, bg="#e6e6e6")
-sidebar.pack(side="left", fill="y")
-shortcut_buttons = [
-    "Cari", "Stok", "Alış F.", "Satış F.",
-    "Üretim", "Servis", "Döviz", "Evrak Kayıt", "Yardım"
-]
-for name in shortcut_buttons:
-    btn = tk.Button(sidebar, text=name, width=18, height=2, bg="white")
-    btn.pack(pady=3, padx=5)
+    def create_widgets(self):
+        # Üst başlık
+        title = tk.Label(self, text="Deep Muhasebe", font=("Segoe UI", 20, "bold"))
+        title.pack(pady=10)
 
-# Sağ Panel (Takvim + Notlar)
-rightbar = tk.Frame(root, width=250, bg="#f7f7f7")
-rightbar.pack(side="right", fill="y")
+        # Ana çerçeve
+        frame = tk.Frame(self)
+        frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-tk.Label(rightbar, text="Takvim", font=("Arial", 12, "bold"), bg="#f7f7f7").pack(pady=5)
-cal = Calendar(rightbar, selectmode="day")
-cal.pack(pady=10)
+        # Sol taraf (Takvim)
+        cal_frame = tk.LabelFrame(frame, text="Takvim")
+        cal_frame.pack(side="left", fill="y", padx=5, pady=5)
 
-tk.Label(rightbar, text="Notlar", font=("Arial", 12, "bold"), bg="#f7f7f7").pack(pady=5)
-notes = tk.Text(rightbar, width=28, height=15)
-notes.pack(padx=5, pady=5)
+        self.cal = Calendar(cal_frame, selectmode="day", date_pattern="dd/mm/yyyy")
+        self.cal.pack(padx=10, pady=10)
 
-# Orta Alan (İçerik)
-content = tk.Frame(root, bg="white")
-content.pack(side="left", expand=True, fill="both")
-tk.Label(content, text="Deep Muhasebe'ye Hoş Geldiniz",
-         font=("Arial", 18), bg="white").pack(pady=20)
+        # Orta panel (Notlar)
+        notes_frame = tk.LabelFrame(frame, text="Günlük Notlar")
+        notes_frame.pack(side="left", fill="both", expand=True, padx=5, pady=5)
 
-root.mainloop()
+        self.notes_text = tk.Text(notes_frame, wrap="word")
+        self.notes_text.pack(fill="both", expand=True)
+
+        # Sağ panel (İşlem listesi)
+        ops_frame = tk.LabelFrame(frame, text="İşlem Listesi")
+        ops_frame.pack(side="left", fill="y", padx=5, pady=5)
+
+        self.ops_list = tk.Listbox(ops_frame)
+        self.ops_list.pack(fill="y", expand=True)
+        for i in range(1, 6):
+            self.ops_list.insert("end", f"İşlem {i}")
+
+if __name__ == "__main__":
+    app = DeepMuhasebeUI()
+    app.mainloop()

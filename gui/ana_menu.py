@@ -41,7 +41,7 @@ class AnaMenu(tk.Tk):
         ttk.Button(button_frame, text="Fatura & İrsaliye Yönetimi", command=self.open_fatura_irsaliye).pack(fill="x", pady=5)
 
         # Kullanıcı Yönetimi butonu
-        ttk.Button(button_frame, text="Kullanici Yönetimi", command=self.open_kullanici_yonetimi).pack(fill="x", pady=5)
+        ttk.Button(button_frame, text="Kullanıcı Yönetimi", command=self.open_kullanici_yonetimi).pack(fill="x", pady=5)
 
     def open_cari_hesap(self):
         CariHesapYonetimi(self)

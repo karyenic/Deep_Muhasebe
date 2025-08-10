@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox
 import sys
 import os
 from datetime import datetime
-import locale # Yeni eklenen satır
+import locale
 
 # Proje ana dizinini Python'ın arama yoluna ekle
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
@@ -20,11 +20,10 @@ create_tables()
 try:
     locale.setlocale(locale.LC_TIME, 'tr_TR.UTF-8')
 except locale.Error:
-    # Eğer sistemde 'tr_TR.UTF-8' locale'i yüklü değilse, başka bir Türkçe locale'i dene
     try:
         locale.setlocale(locale.LC_TIME, 'turkish')
     except locale.Error:
-        pass # Locale ayarlanmazsa bile program çalışmaya devam etsin
+        pass
 
 class SiparisYonetimi(tk.Toplevel):
     def __init__(self, master=None):
@@ -52,7 +51,8 @@ class SiparisYonetimi(tk.Toplevel):
 
         ttk.Label(header_frame, text="Tarih:").grid(row=0, column=2, padx=5, pady=5, sticky="w")
         self.tarih_entry = ttk.Entry(header_frame)
-        self.tarih_entry.insert(0, datetime.now().strftime("%Y-%m-%d"))
+        # Tarih formatı, yerel ayara uygun hale getirildi
+        self.tarih_entry.insert(0, datetime.now().strftime("%d %B %Y"))
         self.tarih_entry.grid(row=0, column=3, padx=5, pady=5, sticky="ew")
 
         ttk.Label(header_frame, text="Cari Hesap:").grid(row=1, column=0, padx=5, pady=5, sticky="w")
@@ -97,7 +97,6 @@ class SiparisYonetimi(tk.Toplevel):
             self.kalem_tree.delete(selected_item)
 
     def siparis_kaydet(self):
-        # Kayıt mantığı
         siparis_no = self.siparis_no_entry.get()
         tarih_str = self.tarih_entry.get()
         cari_adi = self.cari_hesap_combobox.get()
@@ -107,9 +106,10 @@ class SiparisYonetimi(tk.Toplevel):
             return
 
         try:
-            tarih = datetime.strptime(tarih_str, "%Y-%m-%d")
+            # Kayıt için tarihi YYYY-MM-DD formatına dönüştürüyoruz
+            tarih = datetime.strptime(tarih_str, "%d %B %Y")
         except ValueError:
-            messagebox.showerror("Hata", "Geçersiz tarih formatı! (YYYY-MM-DD)")
+            messagebox.showerror("Hata", "Geçersiz tarih formatı! (Örnek: 10 Ağustos 2025)")
             return
 
         cari_hesap_id = self.cari_hesaplar_map.get(cari_adi)
@@ -156,6 +156,8 @@ class SiparisYonetimi(tk.Toplevel):
     def temizle_form(self):
         self.siparis_no_entry.delete(0, tk.END)
         self.tarih_entry.delete(0, tk.END)
+        # Tarih formatı, temizlendikten sonra da yerel ayara uygun hale getirildi
+        self.tarih_entry.insert(0, datetime.now().strftime("%d %B %Y"))
         self.cari_hesap_combobox.set('')
         for item in self.kalem_tree.get_children():
             self.kalem_tree.delete(item)

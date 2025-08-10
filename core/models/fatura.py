@@ -2,7 +2,7 @@
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from core.database import Base
-from core.models.cari_hesap import CariHesap
+# CariHesap modelini import etmeye gerek kalmadı
 
 class Fatura(Base):
     __tablename__ = "faturalar"
@@ -14,6 +14,7 @@ class Fatura(Base):
     cari_hesap_id = Column(Integer, ForeignKey("cari_hesaplar.id"))
     is_irsaliye = Column(Boolean, default=False)
     
+    # İlişkiyi string olarak tanımlıyoruz
     cari_hesap = relationship("CariHesap", back_populates="faturalar")
     kalemler = relationship("FaturaKalem", back_populates="fatura")
 
@@ -28,7 +29,7 @@ class FaturaKalem(Base):
     urun_adi = Column(String)
     miktar = Column(Float)
     birim_fiyat = Column(Float)
-    kdv_orani = Column(Float, default=18.0) # VarsayÄ±lan KDV oranÄ±
+    kdv_orani = Column(Float, default=18.0) # Varsayılan KDV oranı
     
     fatura = relationship("Fatura", back_populates="kalemler")
 

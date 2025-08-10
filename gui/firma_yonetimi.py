@@ -1,5 +1,12 @@
-﻿import tkinter as tk
+﻿import sys
+import os
+import tkinter as tk
 from tkinter import ttk, messagebox
+
+# Proje ana dizinini Python'ın arama yoluna ekle
+ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.append(ana_dizin)
+
 from core.database import SessionLocal, create_tables
 from core.models.firma import Firma
 
@@ -12,10 +19,15 @@ class FirmaYonetimi(tk.Toplevel):
         self.title("Firma Yönetimi")
         self.geometry("600x400")
 
-        self.db_session = next(SessionLocal())
+        self.db_session = SessionLocal()
         self.firmalar = self.get_firmalar()
 
         self.create_widgets()
+        self.protocol("WM_DELETE_WINDOW", self.on_kapat)
+
+    def on_kapat(self):
+        self.db_session.close()
+        self.destroy()
 
     def create_widgets(self):
         # Sekme kontrolü

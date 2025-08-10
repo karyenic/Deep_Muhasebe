@@ -1,28 +1,10 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
-# Veritabanları
-*.db
-*.sqlite
-veriler/
-yedekler/
-
-# Ortam değişkenleri
-.env
-.venv
-venv/
-
-# Loglar ve geçici dosyalar
+# .gitignore
+/venv/
+/backups/
+/logs/
+/database/*.db
+!/database/main.db
 *.log
 *.bak
-*.tmp
-
-# Faturalar
-faturalar/
-
-# IDE
+__pycache__/
 .vscode/
-.idea/

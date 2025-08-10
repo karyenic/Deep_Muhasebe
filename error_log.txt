@@ -1,4 +1,0 @@
-  File "C:\YEDEK\OK2_muhasebe\app.py", line 23
-    from core.database import get_session
-    ^
-IndentationError: expected an indented block after function definition on line 21

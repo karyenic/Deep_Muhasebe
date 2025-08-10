@@ -3,9 +3,11 @@ from tkinter import ttk, messagebox
 import sys
 import os
 
-# Projenin ana dizinini Python'ın arama yoluna ekle
-# Bu, tüm modüllerin import edilebilmesi için gereklidir
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# Projenin ana dizinini belirleyip,
+# dosyanın bulunduğu dizinden ana dizine çıkış yapıyoruz
+ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if ana_dizin not in sys.path:
+    sys.path.append(ana_dizin)
 
 # Diğer GUI modüllerini içe aktar
 from gui.cari_hesap import CariHesapYonetimi

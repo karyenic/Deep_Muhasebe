@@ -13,7 +13,7 @@ class CariHesap(Base):
     vergi_no = Column(String)
     musteri = Column(Boolean, default=True) # True ise müşteri, False ise tedarikçi
 
-    # Siparişler ve Faturalar ile ilişkiyi string olarak tanımlıyoruz
+    # İlişkileri string olarak tanımlıyoruz
     siparisler = relationship("Siparis", back_populates="cari_hesap")
     faturalar = relationship("Fatura", back_populates="cari_hesap")
 

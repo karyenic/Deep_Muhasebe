@@ -14,7 +14,7 @@ from core.models.siparis import Siparis, SiparisKalem
 from core.models.cari_hesap import CariHesap
 
 # Veritabanı tablolarını oluştur
-create_tables()
+create_all_tables()
 
 # Yerel ayarları Türkçe'ye ayarla
 try:

@@ -1,4 +1,5 @@
 ﻿from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy.orm import relationship
 from core.database import Base
 
 class CariHesap(Base):
@@ -10,7 +11,10 @@ class CariHesap(Base):
     telefon = Column(String)
     vergi_dairesi = Column(String)
     vergi_no = Column(String)
-    musteri = Column(Boolean, default=True) # True ise müşteri, False ise tedarikçi
+    musteri = Column(Boolean, default=True) # True ise mÃ¼ÅŸteri, False ise tedarikÃ§i
+
+    # SipariÅŸler ile iliÅŸkiyi tanÄ±mla
+    siparisler = relationship("Siparis", back_populates="cari_hesap")
 
     def __repr__(self):
         return f"<CariHesap(cari_adi='{self.cari_adi}')>"

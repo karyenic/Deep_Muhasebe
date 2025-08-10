@@ -3,8 +3,7 @@ from tkinter import ttk, messagebox
 import sys
 import os
 
-# Projenin ana dizinini belirleyip,
-# dosyanın bulunduğu dizinden ana dizine çıkış yapıyoruz
+# Projenin ana dizinini Python'ın arama yoluna ekle
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if ana_dizin not in sys.path:
     sys.path.append(ana_dizin)

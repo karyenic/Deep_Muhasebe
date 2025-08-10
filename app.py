@@ -1,14 +1,7 @@
 ﻿import tkinter as tk
 from tkinter import ttk, messagebox
-import sys
-import os
 
-# Projenin ana dizinini Python'ın arama yoluna ekle
-ana_dizin = os.path.abspath(os.path.dirname(__file__))
-if ana_dizin not in sys.path:
-    sys.path.append(ana_dizin)
-
-# Diğer GUI modüllerini içe aktar
+# GUI modüllerini içe aktar
 from gui.cari_hesap import CariHesapYonetimi
 from gui.fatura_irsaliye import FaturaIrsaliyeYonetimi
 from gui.kullanici import KullaniciYonetimi

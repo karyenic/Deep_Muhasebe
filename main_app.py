@@ -1,11 +1,16 @@
 ﻿import tkinter as tk
 from tkinter import ttk, messagebox
+import sys
+import os
 
-# GUI modüllerini doğrudan içe aktar
-import gui.cari_hesap
-import gui.fatura_irsaliye
-import gui.kullanici
-import gui.siparis_yonetimi
+# gui klasörünü Python'ın arama yoluna ekle
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'gui')))
+
+# Modülleri doğrudan içe aktar
+from cari_hesap import CariHesapYonetimi
+from fatura_irsaliye import FaturaIrsaliyeYonetimi
+from kullanici import KullaniciYonetimi
+from siparis_yonetimi import SiparisYonetimi
 
 class AnaMenu(tk.Tk):
     def __init__(self):
@@ -38,16 +43,16 @@ class AnaMenu(tk.Tk):
         ttk.Button(button_frame, text="Kullanıcı Yönetimi", command=self.open_kullanici_yonetimi).pack(fill="x", pady=5)
 
     def open_cari_hesap(self):
-        gui.cari_hesap.CariHesapYonetimi(self)
+        CariHesapYonetimi(self)
 
     def open_siparis_yonetimi(self):
-        gui.siparis_yonetimi.SiparisYonetimi(self)
+        SiparisYonetimi(self)
 
     def open_fatura_irsaliye(self):
-        gui.fatura_irsaliye.FaturaIrsaliyeYonetimi(self)
+        FaturaIrsaliyeYonetimi(self)
 
     def open_kullanici_yonetimi(self):
-        gui.kullanici.KullaniciYonetimi(self)
+        KullaniciYonetimi(self)
 
 if __name__ == "__main__":
     app = AnaMenu()

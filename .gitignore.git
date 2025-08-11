@@ -8,3 +8,5 @@
 *.bak
 __pycache__/
 .vscode/
+github_token.secure
+*.secure

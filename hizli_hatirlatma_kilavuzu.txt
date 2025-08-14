@@ -1,0 +1,61 @@
+----------------------------[ PROJE YAPISI ]----------------------------
+ANA DİZİN: C:\Deep_Muhasebe
+├── src/                # Kaynak kodlar
+│   ├── core/           # Çekirdek fonksiyonlar (database.py)
+│   ├── app/            # Uygulama modülleri
+│   └── gui/            # Arayüz kodları
+├── veriler/            # Veritabanı ve kullanıcı verileri (GİTHUB'A GÖNDERME!)
+├── yedekler/           # Otomatik yedekler (GİTHUB'A GÖNDERME!)
+├── venv/               # Python sanal ortamı (GİTHUB'A GÖNDERME!)
+├── scripts/            # PowerShell scriptleri
+├── .gitignore          # İçerik: /venv, /veriler, /yedekler, __pycache__/
+├── push.ps1            # GitHub senkronizasyon scripti (ANA DİZİNDE)
+└── baslat.ps1          # Uygulama başlatma + otomatik push (ANA DİZİNDE)
+
+----------------------------[ GÜNLÜK KULLANIM ]-------------------------
+1. UYGULAMAYI BAŞLAT & TEST ET:
+   .\baslat.ps1   # Uygulamayı çalıştırır, kapanınca otomatik push yapar
+
+2. MANUEL GITHUB SENKRONİZASYONU:
+   .\push.ps1     # Sadece değişiklikleri GitHub'a gönder
+
+----------------------------[ ACİL DÜZELTMELER ]------------------------
+A) MODÜL BULUNAMADI HATASI (core, app vs):
+   - main_app.py'nin en üstüne bu kodları ekle:
+     import sys, os
+     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'src'))
+
+B) SANAL ORTAM (venv) SORUNLARI:
+   1. Eski sanal ortamı sil: Remove-Item -Path .\venv -Recurse -Force
+   2. Yeni oluştur: python -m venv venv
+   3. Paketleri kur: .\venv\Scripts\Activate + pip install -r requirements.txt
+
+C) GITHUB BAĞLANTI KOPMASI:
+   git init
+   git remote add origin https://github.com/karyenic/Deep_Muhasebe.git
+   git fetch origin
+   git reset --hard origin/main
+
+----------------------------[ ÖNEMLİ KOMUTLAR ]-------------------------
+# SQLAlchemy kurulumu (sanal ortamda):
+pip install sqlalchemy
+
+# Tüm bağımlılıkları kaydet:
+pip freeze > requirements.txt
+
+# Python modül yollarını kontrol et:
+python -c "import sys; print('\n'.join(sys.path))"
+
+----------------------------[ CRITICAL NOTES ]--------------------------
+1. VERİTABANI DOSYALARI: 
+   - Sadece C:\Deep_Muhasebe\veriler\ altında tutulur
+   - GitHub'a ASLA gönderilmez (bkz. .gitignore)
+
+2. SANAL ORTAM:
+   - GitHub'a gönderilmez
+   - Taşındığında BOZULUR, yeni dizinde yeniden oluşturulmalı
+
+3. GITHUB SENKRONİZASYON:
+   - push.ps1 her zaman ANA DİZİNDE olmalı
+   - Hata alınırsa: git status + git restore . ile kurtar

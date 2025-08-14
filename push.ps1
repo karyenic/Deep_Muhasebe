@@ -1,10 +1,5 @@
-﻿# GitHub Senkronizasyon Scripti
-Set-Location -Path $PSScriptRoot
-
+﻿cd $PSScriptRoot
 git add .
-$commitMessage = "PC Güncellemesi: $(Get-Date -Format 'dd.MM.yyyy HH:mm')"
-git commit -m $commitMessage
+git commit -m "Acil güncelleme: $(Get-Date -Format 'HH:mm')"
 git push
-
 Write-Host "✅ GitHub'a gönderildi!" -ForegroundColor Green
-Start-Sleep -Seconds 3

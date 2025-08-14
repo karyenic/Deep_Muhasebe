@@ -1,61 +1,35 @@
-﻿import tkinter as tk
-from tkinter import ttk, messagebox
+﻿import sys
+import os
 
-# Veritabanı tablolarını oluşturacak fonksiyonu içe aktar
-from core.database import create_all_tables
+# Kritik yol ayarları
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR = os.path.join(BASE_DIR, 'src')
 
-# GUI modüllerini içe aktar
-from gui.cari_hesap_yonetimi import CariHesapYonetimi
-from gui.fatura_irsaliye import FaturaIrsaliyeYonetimi
-from gui.kullanici_yonetimi import KullaniciYonetimi
-from gui.siparis_yonetimi import SiparisYonetimi
+# Python yoluna ekle
+sys.path.insert(0, BASE_DIR)
+sys.path.insert(0, SRC_DIR)
 
-class AnaMenu(tk.Tk):
-    def __init__(self):
-        super().__init__()
-        
-        # Veritabanı tablolarını başlat
-        create_all_tables()
-        
-        self.title("Deep Muhasebe - Ana Menü")
-        self.geometry("800x600")
-        self.create_widgets()
+try:
+    # Doğru import
+    from core.database import create_all_tables
+    print("="*50)
+    print("✅ Modül yolları başarıyla ayarlandı!")
+    print(f"Ana Dizin: {BASE_DIR}")
+    print(f"Kaynak Dizin: {SRC_DIR}")
+    print("="*50)
+except ImportError as e:
+    print(f"❌ Import Hatası: {e}")
+    print("Python Yolları:")
+    for p in sys.path:
+        print(f" - {p}")
+    input("Devam etmek için Enter'a basın...")
+    exit(1)
 
-    def create_widgets(self):
-        main_frame = ttk.Frame(self, padding="20")
-        main_frame.pack(fill="both", expand=True)
-
-        header_label = ttk.Label(main_frame, text="Deep Muhasebe Yönetim Paneli", font=("Helvetica", 16, "bold"))
-        header_label.pack(pady=20)
-
-        # Modül butonları için bir çerçeve oluştur
-        button_frame = ttk.Frame(main_frame)
-        button_frame.pack(pady=20)
-        
-        # Cari Hesap Yönetimi butonu
-        ttk.Button(button_frame, text="Cari Hesap Yönetimi", command=self.open_cari_hesap).pack(fill="x", pady=5)
-        
-        # Sipariş Yönetimi butonu
-        ttk.Button(button_frame, text="Sipariş Yönetimi", command=self.open_siparis_yonetimi).pack(fill="x", pady=5)
-
-        # Fatura & İrsaliye Yönetimi butonu
-        ttk.Button(button_frame, text="Fatura & İrsaliye Yönetimi", command=self.open_fatura_irsaliye).pack(fill="x", pady=5)
-
-        # Kullanıcı Yönetimi butonu
-        ttk.Button(button_frame, text="Kullanıcı Yönetimi", command=self.open_kullanici_yonetimi).pack(fill="x", pady=5)
-
-    def open_cari_hesap(self):
-        CariHesapYonetimi(self)
-
-    def open_siparis_yonetimi(self):
-        SiparisYonetimi(self)
-
-    def open_fatura_irsaliye(self):
-        FaturaIrsaliyeYonetimi(self)
-
-    def open_kullanici_yonetimi(self):
-        KullaniciYonetimi(self)
+def main():
+    print("Veritabanı tabloları oluşturuluyor...")
+    create_all_tables()
+    print("✅ Tablolar başarıyla oluşturuldu!")
+    input("\nUygulamayı kapatmak için Enter'a basın...")
 
 if __name__ == "__main__":
-    app = AnaMenu()
-    app.mainloop()
+    main()

@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Veriler
+/veriler/
+/yedekler/
+
+# Ortam
+/venv/
+
+# Loglar
+*.log
+*.tmp
+
+# Sistem
+.DS_Store
+Thumbs.db

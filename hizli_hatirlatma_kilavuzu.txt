@@ -12,6 +12,15 @@ ANA DİZİN: C:\Deep_Muhasebe
 ├── push.ps1            # GitHub senkronizasyon scripti (ANA DİZİNDE)
 └── baslat.ps1          # Uygulama başlatma + otomatik push (ANA DİZİNDE)
 
+ - BU MUHASEBE PAKET ENTEGRE YAZILIMINDA ILK CALISILACAK KONULAR : 
+ -- GIRISTE FIRMA OLUSTUR/SEC, KULLANICI OLUSTUR /SEC, (ADMIN KULLAICI OLACAK VE DIGER USER KULLANICILARI ADMIN KAYDEDECEK' YETKILER BELIRLENECEK) KULLANICI GIRISLERINDE SIFRELER CIFT DOGRULAMALI OLARAK GIRILECEK. )
+--- MODULLER : 
+. SIPARIS : (MUSTERIDEN GELEN SIPARIS BURAYA ISLENECEK, URUN SEVKIYATI KISMEN VEYA TAMEMEN YAPILIRKEN IRSALIYE VEYA FATURA ILE YAPILDIGINDA TUM MODULLERDE KONSOLIDE OLACAK; SIPARISLERDE SEVKIYATLAR BAKIYELER AYRI RENKLERDE TABLO HALINDE GOSTERILECEK)
+. STOK 
+. FATURA-IRSALIYE : E FATURA ENTGRASYONU UZERINDE GELISTIRME YAPACAGIZ
+. CARI HESAP
+. BANKA/ CEK-SENET
+
 ----------------------------[ GÜNLÜK KULLANIM ]-------------------------
 1. UYGULAMAYI BAŞLAT & TEST ET:
    .\baslat.ps1   # Uygulamayı çalıştırır, kapanınca otomatik push yapar
@@ -59,3 +68,4 @@ python -c "import sys; print('\n'.join(sys.path))"
 3. GITHUB SENKRONİZASYON:
    - push.ps1 her zaman ANA DİZİNDE olmalı
    - Hata alınırsa: git status + git restore . ile kurtar
+ 4. kullanici amator, tum komut ekleme cikarma vs islemler powershell komutlari ile yapilmali

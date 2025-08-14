@@ -1,0 +1,12 @@
+# .gitignore
+/venv/
+/backups/
+/logs/
+/database/*.db
+!/database/main.db
+*.log
+*.bak
+__pycache__/
+.vscode/
+github_token.secure
+*.secure

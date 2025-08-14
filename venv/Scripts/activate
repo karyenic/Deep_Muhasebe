@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\YEDEK\Deep_Muhasebe\Deep_Muhasebe-main\venv"
+VIRTUAL_ENV="C:\Deep_Muhasebe\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

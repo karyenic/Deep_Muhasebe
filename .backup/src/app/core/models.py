@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-from .database import Base  # Döngüsel import'u önlemek için
+from src.core.database import'u önlemek için
 
 class Firm(Base):
     __tablename__ = 'firmalar'
@@ -14,5 +14,7 @@ class User(Base):
     username = Column(String, unique=True, nullable=False)
     password = Column(String, nullable=False)
     firm_id = Column(Integer, nullable=False)
+
+
 
 

@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from tkinter import ttk, messagebox
-from core.database import get_session
+from src.core.database import get_session
 from core.models import CariHesap
                 class CariModule(ttk.Frame):
                                                                                                                                 def __init__(
@@ -176,6 +176,8 @@ from core.models import CariHesap
                                                                                                                                                                                                                                                                                                                                                                                                                 # GÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š¶rÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š¼nÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š¼rlÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š¼ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾İ¦Ãƒâ€š¸ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š¼ gÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š¼ncelle
                                                                                                                                                                                                                                                                 self.tree.tag_configure('visible', display='')
                                                                                                                                                                                                                                                                 self.tree.tag_configure('hidden', display='none')
+
+
 
 
 

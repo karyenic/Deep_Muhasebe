@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from tkinter import ttk
-from core.database import get_session
+from src.core.database import get_session
 from core.models import Product
 class StokModule(ttk.Frame):
 def __init__(
@@ -53,6 +53,8 @@ f"{product.unit_price:.2f} ÃƒÆ’¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€�
 def new_product(self):
 # Yeni ÃƒÆ’Ã†â€™Ãƒâ€š¼rÃƒÆ’Ã†â€™Ãƒâ€š¼n formu
 print("Yeni ÃƒÆ’Ã†â€™Ãƒâ€š¼rÃƒÆ’Ã†â€™Ãƒâ€š¼n formu aÃƒÆ’Ã†â€™Ãƒâ€š§ılacak")
+
+
 
 
 

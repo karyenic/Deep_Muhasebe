@@ -9,7 +9,7 @@ import locale
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ana_dizin)
 
-from core.database import SessionLocal, create_all_tables
+from src.core.database import SessionLocal, create_all_tables
 from core.models.siparis import Siparis, SiparisKalem
 from core.models.cari_hesap import CariHesap
 
@@ -167,3 +167,5 @@ if __name__ == "__main__":
     root.withdraw()
     siparis_ekrani = SiparisYonetimi(root)
     siparis_ekrani.mainloop()
+
+

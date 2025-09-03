@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from sqlalchemy.orm import relationship
-from core.database import Base
+from src.core.database import Base
  class Firm(Base):
       """
         Firma modeli - Her firma muhasebe verilerini iÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š§eren baÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾İ¦Ãƒâ€š¸ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š±msÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š±z bir birimdir
@@ -25,6 +25,8 @@ from core.database import Base
         accounts = relationship("Account", back_populates="firm")
          def __repr__(self):
               return f"<Firm(id={self.id}, name='{self.name}')>"
+
+
 
 
 

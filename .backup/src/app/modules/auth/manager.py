@@ -10,7 +10,7 @@ def check_password(hashed_password: str, user_password: str) -> bool:
 
 def create_user(username: str, password: str, firm_id: int):
     """Yeni kullanıcı oluşturur."""
-    from core.database import get_session
+    from src.core.database import get_session
     from core.models import User
     
     with get_session() as session:
@@ -21,6 +21,8 @@ def create_user(username: str, password: str, firm_id: int):
         )
         session.add(new_user)
         session.commit()
+
+
 
 
 

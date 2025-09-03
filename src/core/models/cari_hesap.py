@@ -1,6 +1,6 @@
 ﻿from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
-from core.database import Base
+from src.core.database import Base
 
 class CariHesap(Base):
     __tablename__ = "cari_hesaplar"
@@ -19,3 +19,5 @@ class CariHesap(Base):
 
     def __repr__(self):
         return f"<CariHesap(cari_adi='{self.cari_adi}')>"
+
+

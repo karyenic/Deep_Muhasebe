@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from core.models import Firm
-from core.database import get_session
+from src.core.database import get_session
 
 def create_firm(name: str, address: str, tax_number: str):
     """Yeni firma oluşturur"""
@@ -25,5 +25,7 @@ def get_all_firms():
     """Tüm firmaları listeler"""
     with get_session() as session:
         return session.query(Firm).all()
+
+
 
 

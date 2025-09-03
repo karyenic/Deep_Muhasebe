@@ -35,7 +35,7 @@ fix_paths()
 
 # VERİTABANI BAŞLATMA
 try:
-    from core.database import create_tables
+    from src.core.database import create_tables
     print("Veritabanı tabloları oluşturuluyor...")
     create_tables()
     print("✅ Tablolar başarıyla oluşturuldu!")
@@ -44,3 +44,5 @@ except Exception as e:
 
 # UYGULAMA SONU
 input("\nUygulamayı kapatmak için Enter'a basın...")
+
+

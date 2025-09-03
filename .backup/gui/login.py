@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from tkinter import ttk
-from core.database import get_session
+from src.core.database import get_session
 from core.models import Firm, User
 from modules.auth.manager import check_password
 
@@ -19,5 +19,7 @@ class LoginWindow:
         
         # Diğer widget'lar buraya...
         # (Orijinal login.py içeriğiniz burada kalacak)
+
+
 
 

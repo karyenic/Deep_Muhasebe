@@ -1,7 +1,7 @@
 ﻿from sqlalchemy import Column, Integer, String, DateTime, Float, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from core.database import Base
+from src.core.database import Base
 # CariHesap modelini import etmeye gerek kalmadı
 
 class Fatura(Base):
@@ -35,3 +35,5 @@ class FaturaKalem(Base):
 
     def __repr__(self):
         return f"<FaturaKalem(urun='{self.urun_adi}', miktar='{self.miktar}')>"
+
+

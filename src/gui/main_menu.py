@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from tkinter import ttk, messagebox
-from core.database import get_session
+from src.core.database import get_session
 from modules.firma.manager import get_all_firms
 
 class MainMenuWindow:
@@ -58,5 +58,7 @@ class MainMenuWindow:
     
     def test_function(self):
         messagebox.showinfo("Test", "Uygulama çalışıyor!\nTürkçe karakter testi: ğüşiöçĞÜŞİÖÇ")
+
+
 
 

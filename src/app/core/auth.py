@@ -1,5 +1,5 @@
 ﻿# -*- coding: utf-8 -*-
-from core.database import get_session
+from src.core.database import get_session
 from core.models import User
                 class AuthManager:
                                                                                                                                 def __init__(
@@ -43,6 +43,8 @@ from core.models import User
                                                                                                                                                                                                                                                                                                                                                                                                 return None
                                                                                                                                                                                                                                                                 finally:
                                                                                                                                                                                                                                                                                                                                                                                                 session.close()
+
+
 
 
 

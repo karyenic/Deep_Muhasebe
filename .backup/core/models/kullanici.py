@@ -1,6 +1,6 @@
 ﻿from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
-from core.database import Base
+from src.core.database import Base
 
 class Kullanici(Base):
     __tablename__ = "kullanicilar"
@@ -18,3 +18,5 @@ class Kullanici(Base):
 
     def __repr__(self):
         return f"<Kullanici(kullanici_adi='{self.kullanici_adi}')>"
+
+

@@ -1,7 +1,7 @@
 ﻿from sqlalchemy import Column, Integer, String, DateTime, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from core.database import Base
+from src.core.database import Base
 from core.models.cari_hesap import CariHesap
 
 class Siparis(Base):
@@ -31,3 +31,5 @@ class SiparisKalem(Base):
 
     def __repr__(self):
         return f"<SiparisKalem(urun='{self.urun_adi}', miktar='{self.miktar}')>"
+
+

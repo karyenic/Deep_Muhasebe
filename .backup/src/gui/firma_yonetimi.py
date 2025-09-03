@@ -7,7 +7,7 @@ from tkinter import ttk, messagebox
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ana_dizin)
 
-from core.database import SessionLocal, create_tables
+from src.core.database import SessionLocal, create_tables
 from core.models.firma import Firma
 
 # Veritabanı tablolarını oluştur
@@ -124,3 +124,4 @@ if __name__ == "__main__":
     # Firma yönetimi penceresini aç
     firma_ekrani = FirmaYonetimi(root)
     firma_ekrani.mainloop()
+

@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from tkinter import ttk, messagebox
-from core.database import get_session
+from src.core.database import get_session
 from core.models import Firm
 from modules.auth.manager import create_user, authenticate
                 class LoginFrame(tk.Frame):
@@ -144,6 +144,8 @@ from modules.auth.manager import create_user, authenticate
                                                                                                                                                                                                                                                                 else:
                                                                                                                                                                                                                                                                                                                                                                                                 messagebox.showerror("Hata", "KullanÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š±cÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š± oluÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬¦İ¦Ãƒâ€š¸turulamadÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€š±.")
                 
+
+
 
 
 

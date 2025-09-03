@@ -2,7 +2,7 @@
 from tkinter import ttk, messagebox
 
 # Veritabanı tablolarını oluşturacak fonksiyonu içe aktar
-from core.database import create_all_tables
+from src.core.database import create_all_tables
 
 # GUI modüllerini içe aktar
 from gui.cari_hesap_yonetimi import CariHesapYonetimi
@@ -59,3 +59,5 @@ class AnaMenu(tk.Tk):
 if __name__ == "__main__":
     app = AnaMenu()
     app.mainloop()
+
+

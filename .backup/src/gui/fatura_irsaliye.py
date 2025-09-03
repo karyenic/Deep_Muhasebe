@@ -9,7 +9,7 @@ import locale
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ana_dizin)
 
-from core.database import SessionLocal, create_all_tables
+from src.core.database import SessionLocal, create_all_tables
 from core.models.fatura import Fatura, FaturaKalem
 from core.models.cari_hesap import CariHesap
 
@@ -181,3 +181,5 @@ if __name__ == "__main__":
     root.withdraw()
     fatura_ekrani = FaturaIrsaliyeYonetimi(root)
     fatura_ekrani.mainloop()
+
+

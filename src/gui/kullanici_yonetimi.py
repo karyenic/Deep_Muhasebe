@@ -1,4 +1,4 @@
-import sys
+ï»¿import sys
 import os
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -7,7 +7,7 @@ from tkinter import ttk, messagebox
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ana_dizin)
 
-from core.database import SessionLocal, create_all_tables
+from src.core.database import SessionLocal, create_all_tables
 from core.models.kullanici import Kullanici
 from core.security import get_password_hash
 
@@ -17,7 +17,7 @@ create_all_tables()
 class KullaniciYonetimi(tk.Toplevel):
     def __init__(self, master=None):
         super().__init__(master)
-        self.title("Kullanici Yönetimi")
+        self.title("Kullanici YÃ¶netimi")
         self.geometry("500x350")
         self.db_session = SessionLocal()
 
@@ -34,7 +34,7 @@ class KullaniciYonetimi(tk.Toplevel):
         main_frame.pack(padx=10, pady=10, fill="both", expand=True)
 
         # Kullanici Ekleme Formu
-        ekle_frame = ttk.LabelFrame(main_frame, text="Kullanici Ekle/Düzenle")
+        ekle_frame = ttk.LabelFrame(main_frame, text="Kullanici Ekle/DÃ¼zenle")
         ekle_frame.pack(padx=5, pady=5, fill="x")
 
         ttk.Label(ekle_frame, text="Kullanici Adi:").grid(row=0, column=0, padx=5, pady=5, sticky="w")
@@ -46,12 +46,12 @@ class KullaniciYonetimi(tk.Toplevel):
         self.sifre_entry.grid(row=1, column=1, padx=5, pady=5, sticky="ew")
 
         self.is_admin_var = tk.BooleanVar()
-        self.is_admin_check = ttk.Checkbutton(ekle_frame, text="Yönetici (Admin) Yetkisi", variable=self.is_admin_var)
+        self.is_admin_check = ttk.Checkbutton(ekle_frame, text="YÃ¶netici (Admin) Yetkisi", variable=self.is_admin_var)
         self.is_admin_check.grid(row=2, column=1, padx=5, pady=5, sticky="w")
 
         ttk.Button(ekle_frame, text="Kaydet", command=self.kullanici_kaydet).grid(row=3, column=1, padx=5, pady=10, sticky="e")
 
-        # Kullanici Listeleme Bölümü
+        # Kullanici Listeleme BÃ¶lÃ¼mÃ¼
         listele_frame = ttk.LabelFrame(main_frame, text="Kullanici Listesi")
         listele_frame.pack(padx=5, pady=5, fill="both", expand=True)
 
@@ -88,11 +88,11 @@ class KullaniciYonetimi(tk.Toplevel):
         self.kullanici_listbox.delete(0, tk.END)
         kullanicilar = self.db_session.query(Kullanici).all()
         for kullanici in kullanicilar:
-            yetki = " (Yönetici)" if kullanici.yetkili else ""
+            yetki = " (YÃ¶netici)" if kullanici.yetkili else ""
             self.kullanici_listbox.insert(tk.END, f"{kullanici.kullanici_adi}{yetki}")
 
     def kullanici_sec(self, event):
-        # Bu kisimda seçilen kullanicinin bilgileri çekilip düzenleme formuna yerlestirilebilir
+        # Bu kisimda seÃ§ilen kullanicinin bilgileri Ã§ekilip dÃ¼zenleme formuna yerlestirilebilir
         pass
 
     def temizle_form(self):
@@ -105,3 +105,5 @@ if __name__ == "__main__":
     root.withdraw()
     kullanici_ekrani = KullaniciYonetimi(root)
     kullanici_ekrani.mainloop()
+
+

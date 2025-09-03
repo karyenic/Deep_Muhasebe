@@ -7,7 +7,7 @@ from tkinter import ttk, messagebox
 ana_dizin = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(ana_dizin)
 
-from core.database import SessionLocal, create_all_tables
+from src.core.database import SessionLocal, create_all_tables
 from core.models.cari_hesap import CariHesap
 
 # Veritabanı tablolarını oluştur
@@ -120,3 +120,5 @@ if __name__ == "__main__":
     root.withdraw()
     cari_hesap_ekrani = CariHesapYonetimi(root)
     cari_hesap_ekrani.mainloop()
+
+

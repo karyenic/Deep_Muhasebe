@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from tkinter import ttk
-from core.database import get_session
+from src.core.database import get_session
 from core.models import CariHesap
                 class CariModule(tk.Frame):
                                                                                                                                 def __init__(
@@ -101,6 +101,8 @@ from core.models import CariHesap
                                                                                                                                                                                                                                                                                                                                                                                                 print(f"Sil: {item['values']}")
                                                                                                                                                                                                                                                                 else:
                                                                                                                                                                                                                                                                                                                                                                                                 messagebox.showwarning("Uyarı", "LÃƒÆ’Ã†â€™Ãƒâ€š¼tfen bir cari hesap seÃƒÆ’Ã†â€™Ãƒâ€š§in")
+
+
 
 
 
